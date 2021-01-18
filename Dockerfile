@@ -1,7 +1,7 @@
 # haproxy1.6.9 with certbot
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get install -y libssl1.0.0 libpcre3 --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y libssl1.0.0 libpcre3 iproute2 --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # Setup HAProxy
 ENV HAPROXY_MAJOR 1.8
