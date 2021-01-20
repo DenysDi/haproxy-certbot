@@ -57,9 +57,7 @@ EXPOSE 80 443
 VOLUME ["/config/", "/etc/letsencrypt/", "/usr/local/etc/haproxy/certs.d/"]
 
 # Enable FORCE_HTTPS_REDIRECT
-RUN cat <<EOT | tee /etc/default/haproxy \
-  FORCE_HTTPS_REDIRECT=true \
-  EOT
-  
+RUN echo "FORCE_HTTPS_REDIRECT=true" > /etc/default/haproxy
+
 # Start
 CMD ["/start.sh"]
