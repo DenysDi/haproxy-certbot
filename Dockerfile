@@ -28,8 +28,8 @@ RUN buildDeps='curl gcc libc6-dev libpcre3-dev libssl-dev make' \
 
 # Enable FORCE_HTTPS_REDIRECT
 RUN cat <<EOT | tee /etc/default/haproxy
-  FORCE_HTTPS_REDIRECT=true
-  EOT
+FORCE_HTTPS_REDIRECT=true
+EOT
 
 # Install Supervisor, cron, libnl-utils, net-tools, iptables
 RUN apt-get update && apt-get install -y supervisor cron libnl-utils net-tools iptables && \
